@@ -1,0 +1,56 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "webkernel/component-exceptions",
+    "description": "Plugin construction toolkit for Webkernel. Provides reusable traits for navigation, labels, global search, tenancy, and multi-resource configuration in Filament-based plugins.",
+    "version": "0.1.0",
+    "homepage": "https://www.webkernelphp.com/",
+    "type": "webkernel-component",
+    "license": "EPL-2.0",
+    "authors": [
+        {
+            "name": "El Moumen Yassine",
+            "email": "yassine@numerimondes.com",
+            "homepage": "https://webkernelphp.com/about"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/webkernelphp/component-exceptions/issues"
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "*",
+        "filament/filament": "*",
+        "webkernel/standard-lifecycle": ">=0.1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkernel\\Exceptions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webkernel\\Exceptions\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkernel\\Exceptions\\ExceptionsServiceProvider"
+            ]
+        },
+        "webkernel": {
+            "package_repo": "git@github.com:webkernelphp/component-exceptions.git",
+            "prefix": "component",
+            "config_scope": "plugin"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
