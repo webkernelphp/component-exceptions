@@ -30,8 +30,8 @@
             class="flex h-6 w-6 flex-shrink-0 cursor-pointer items-center justify-center rounded-md dark:border dark:border-white/8"
             :class="expanded ? 'text-blue-500 dark:text-emerald-500 dark:bg-white/5' : 'text-neutral-500 dark:bg-white/3'"
         >
-            <x-heroicon-o-chevron-up class="h-3 w-3" x-show="expanded" x-cloak />
-            <x-heroicon-o-chevron-down class="h-3 w-3" x-show="!expanded" />
+            <x-filament::icon icon="heroicon-o-chevron-up" class="h-3 w-3" x-show="expanded" x-cloak />
+            <x-filament::icon icon="heroicon-o-chevron-down" class="h-3 w-3" x-show="!expanded" />
         </button>
     </div>
 

@@ -32,24 +32,28 @@
             class="flex h-6 w-6 flex-shrink-0 cursor-pointer items-center justify-center rounded-md border border-neutral-200 dark:border-white/8"
             :class="expanded ? 'text-blue-500 dark:text-emerald-500 dark:bg-white/5' : 'text-neutral-500 dark:bg-white/3'"
         >
-            <x-heroicon-o-chevron-up class="h-3 w-3" x-show="expanded" x-cloak />
-            <x-heroicon-o-chevron-down class="h-3 w-3" x-show="!expanded" />
+            <x-filament::icon icon="heroicon-o-chevron-up" class="h-3 w-3" x-show="expanded" x-cloak />
+            <x-filament::icon icon="heroicon-o-chevron-down" class="h-3 w-3" x-show="!expanded" />
         </button>
     </div>
 
     <div x-show="expanded" x-cloak class="flex flex-col gap-1.5 p-3">
         @foreach ($trace->frameGroups() as $group)
             @if ($group['isVendor'])
-                <x-errors::partials.exception-trace.vendor-group
-                    :frames="$group['frames']"
-                    :base-path="$basePath"
-                />
+                @include('errors::partials.exception-trace.vendor-group',
+                    [
+                    'frames'    => $group['frames'],
+                    'base-path' => $basePath
+                    ]
+                )
             @else
                 @foreach ($group['frames'] as $frame)
-                    <x-errors::partials.exception-trace.frame
-                        :frame="$frame"
-                        :base-path="$basePath"
-                    />
+                    @include('errors::partials.exception-trace.frame',
+                        [
+                        'frames'    => $frame,
+                        'base-path' => $basePath
+                        ]
+                    )
                 @endforeach
             @endif
         @endforeach

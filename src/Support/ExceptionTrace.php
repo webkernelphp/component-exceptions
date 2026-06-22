@@ -104,7 +104,7 @@ final readonly class ExceptionTrace
         $chain = [];
         $current = $this->previous;
 
-        while ($current !== null) {
+        while ($current instanceof \Webkernel\Exceptions\Support\ExceptionTrace) {
             $chain[] = $current;
             $current = $current->previous;
         }
