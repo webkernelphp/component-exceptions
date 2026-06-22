@@ -336,18 +336,24 @@
         font-size: clamp(140px, 35vw, 480px);
 
         color: var(--wk-accent-color);
-        opacity: 0.09;
+        opacity: .28;
 
-        /* glassmorphism par-dessus la couleur */
         -webkit-backdrop-filter: blur(0px);
         backdrop-filter: blur(0px);
     }
+
     .dark .wk-error-watermark {
         color: var(--wk-accent-color);
         opacity: 0.22;
         filter:
             drop-shadow(0 0 80px var(--wk-accent-color))
             drop-shadow(0 2px 12px rgba(0,0,0,0.5));
+    }
+
+    @media (max-width: 767px) {
+        .wk-error-watermark {
+            padding-bottom: 18rem;
+        }
     }
 
     /* ─── Floating decorative chips ─────────────────────────── */
@@ -501,18 +507,12 @@
 
             {{-- Rings + glyph --}}
             <div class="relative mx-auto mb-8 flex h-32 w-32 items-center justify-center" style="z-index:50">
-                <div class="wk-error-ring-outer"></div>
-                <div class="wk-error-ring-inner"></div>
-                <div class="wk-error-glyph">
-                    <x-filament::icon
-                        :icon="$icon"
-                        class="wk-icon-{{ $accentKey }}"
-                        style="width:30px;height:30px"
-                    />
-                </div>
-            </div>
 
-            <h1 class="wk-error-title">{{ $title }}</h1>
+            </div>
+            <h1 class="wk-error-title flex items-center justify-center gap-2">
+                <x-filament::icon :icon="$icon" style="width:30px;height:30px"/>
+                <span>{{ $title }}</span>
+            </h1>
 
             <p class="wk-error-description">{{ $description }}</p>
 
