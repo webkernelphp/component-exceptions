@@ -32,7 +32,7 @@
         404 => [
             'icon'        => 'heroicon-o-globe-alt',
             'title'       => 'Page Not Found',
-            'description' => 'We can\'t find the page you\'re looking for. It might have been moved, deleted, or the link might be broken. Don\'t worry, your inbox is safe and sound.',
+            'description' => 'We can\'t find the page you\'re looking for. It might have been moved, deleted, or the link might be broken.',
             'accent'      => 'gray',
         ],
         405 => [

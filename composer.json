@@ -2,7 +2,7 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "webkernel/component-exceptions",
     "description": "Plugin construction toolkit for Webkernel. Provides reusable traits for navigation, labels, global search, tenancy, and multi-resource configuration in Filament-based plugins.",
-    "version": "0.1.0",
+    "version": "0.12.0",
     "homepage": "https://www.webkernelphp.com/",
     "type": "webkernel-component",
     "license": "EPL-2.0",
@@ -20,7 +20,7 @@
         "php": "^8.2",
         "laravel/framework": "*",
         "filament/filament": "*",
-        "webkernel/standard-lifecycle": ">=0.1.0"
+        "webkernel/standard-lifecycle": "0.12.0"
     },
     "require-dev": {
         "orchestra/testbench": "^9.0|^10.0",
